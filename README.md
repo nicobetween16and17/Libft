@@ -18,7 +18,9 @@ char	*ft_strtrim(char const *s1, char const *set) {
 		return (0);
 	return (trim);
 }
+
 str trim a modif
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
@@ -33,7 +35,9 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(res, count * size);
 	return (res);
 }
+
 calloc a modif
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*strmap;
@@ -52,7 +56,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (strmap);
 }
+
 mapi a modif
+
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*mem;
@@ -68,7 +74,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	}
 	(*lst) = 0;
 }
+
 lst clear a modif
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	if (ft_strlen(src) + 1 < size)
@@ -80,6 +88,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (ft_strlen(src));
 }
+
 a modif ?
 
 
