@@ -2,10 +2,12 @@
 First 19 school project wich consist of a personnal library of functions recreated by hands
 
 
-char	*ft_strtrim(char const *s1, char const *set) {
+char	*ft_strtrim(char const *s1, char const *set)
+{
+
 	unsigned int	start;
 	char			*trim;
-	size_t 			end;
+	size_t 			end;	
 	start = 0;
 	while (s1[start] && ft_is_set(s1[start], set))
 		start++;
@@ -24,7 +26,8 @@ str trim a modif
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*res;
+
+	void	*res;	
 	if (count == 0)
 		count = 1;
 	if (size == 0)
@@ -40,8 +43,9 @@ calloc a modif
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+
 	char			*strmap;
-	unsigned int	i;
+	unsigned int	i;	
 	if (!s)
 		return (0);
 	i = 0;
@@ -60,6 +64,7 @@ mapi a modif
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+
 	t_list	*mem;
 	while (lst && (*lst))
 	{
@@ -77,6 +82,7 @@ lst clear a modif
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
+
 	if (ft_strlen(src) + 1 < size)
 		ft_memcpy(dst, src, ft_strlen(src) + 1);
 	else if (size > 0)
