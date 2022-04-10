@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)
+		while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 			i++;
 		if (str[i] == '-')
 			signe = -1;
@@ -31,12 +31,12 @@ int	ft_atoi(const char *str)
 			i++;
 		while (ft_isdigit(str[i]))
 			res = (10 * res) + (str[i++] - 48);
-        if (signe == 1 && res > 2147483647)
-            return (-1);
-        if (signe == -1 && res > 2147483648)
-            return (0);
+		if (signe == 1 && res > 2147483647)
+			return (-1);
+		if (signe == -1 && res > 2147483648)
+			return (0);
 		while (str[i] != '\0')
 			i++;
 	}
-	return (res * signe);
+	return ((int)res * signe);
 }
