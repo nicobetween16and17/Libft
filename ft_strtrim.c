@@ -29,6 +29,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			*trim;
 	size_t			end;
 
+	if (!s1)
+		return (0);
 	start = 0;
 	while (s1[start] && ft_is_set(s1[start], set))
 		start++;

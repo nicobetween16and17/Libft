@@ -64,7 +64,7 @@ OBJS	=	${SRCS:.c=.o}
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
-		${ARRCS} ${NAME} ${OBJS}
+		${ARRCS} ${NAME} ${OBJS} -c ${INCS}
 
 all: ${NAME}
 
@@ -73,6 +73,10 @@ clean:
 
 fclean: clean
 		${RM} ${NAME}
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 re:	fclean all
 
