@@ -14,17 +14,18 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*strmap;
-	unsigned int	i;
-
-	i = 0;
-	strmap = ft_strdup(s);
-	if (!strmap)
-		return (0);
-	while (strmap[i])
-	{
-		strmap[i] = f(strmap[i], i);
-		i++;
-	}
-	return (strmap);
+    char			*strmap;
+    unsigned int	i;
+    if (!s)
+        return (0);
+    i = 0;
+    strmap = ft_strdup(s);
+    if (!strmap)
+        return (0);
+    while (strmap[i])
+    {
+        strmap[i] = f(i, strmap[i]);
+        i++;
+    }
+    return (strmap);
 }

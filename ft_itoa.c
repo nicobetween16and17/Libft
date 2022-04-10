@@ -14,8 +14,6 @@
 
 size_t	ft_nsize(long n, int size)
 {
-	if (n == 0 && size == 0)
-		return (1);
 	if (n < 0)
 		return (ft_nsize(-n, size + 1));
 	if (n > 0)
@@ -27,8 +25,6 @@ char	*ft_specials(int n)
 {
 	if (n == 0)
 		return (ft_strdup("0"));
-	else if (n == 2147483647)
-		return (ft_strdup("2147483647"));
 	return (ft_strdup("-2147483648"));
 }
 
@@ -39,10 +35,10 @@ char	*ft_itoa(int n)
 	long	nb;
 
 	nb = n;
-	if (n == 0 || n == -2147483648 || n == 2147483647)
+	if (n == 0 || n == -2147483648)
 		return (ft_specials(n));
 	size = ft_nsize(nb, 0);
-	itoa = malloc((size + 1) * sizeof(int));
+	itoa = malloc((size + 1) * sizeof(char));
 	if (!itoa)
 		return (0);
 	if (n < 0)
